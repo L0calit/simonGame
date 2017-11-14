@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" type="text/css"> -->
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<style>
+    html {
+        background-color: #E8D2B0;
+        overflow: hidden;
+    }
+    .titre {
+        font-family: serif;
+        font-size: 50px;
+        font-weight: bold;
+        color: #333333;
+        text-align: center;
+    }
+    .cercle {
+        background: #333333;
+        border-radius: 50%;
+        width: 500px;
+        height: 500px;
+        overflow: hidden;
+    }
+    .petitcercle {
+        background: #333333;
+        border-radius: 50%;
+        width: 460px;
+        height: 460px;
+        overflow: hidden;
+    }
+    .pluspetitcercle {
+        position: relative;
+        z-index: 10;
+        top: -370px;
+        background: white;
+        border-radius: 50%;
+        width: 270px;
+        height: 270px;
+    }
+    .count {
+        background: black;
+        display: inline-block;
+        min-width: 50px;
+        min-height: 50px;
+        border-radius: 10%;
+        color: red;
+        font-size: 55px;
+    }
+    button {
+        font-size: 20px;
+    }
+    button:active {
+        background: grey;
+    }
+    .jaune {
+        background: yellow;
+        border-color: #333333;
+        width: 230px;
+        height: 230px;
+    }
+    .bleu {
+        background: blue;
+        border-color: #333333;
+        width: 230px;
+        height: 230px;
+    }
+    .rouge {
+        background: red;
+        border-color: #333333;
+        width: 230px;
+        height: 230px;
+    }
+    .vert {
+        background: green;
+        border-color: #333333;
+        width: 230px;
+        height: 230px;
+    }
+    table {
+        border-spacing: 10px;
+        z-index: 2;
+    }
+    .active {
+        background: grey;
+    }
+</style>
+
+<head>
+    <title> Simon Game </title>
+</head>
+
+<script src="simon_game.js"></script>
+
+<audio id="5" src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></audio>
+<audio id="6" src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></audio>
+<audio id="7" src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></audio>
+<audio id="8" src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></audio>
+
+
+<div class="page">
+    <br><br>
+    <br>
+    <br><br>
+    <center>
+        <br>
+        <div id="montre" class="cercle">
+            <br>
+            <div class="petitcercle">
+                <table>
+                    <tr>
+                        <button id="1" class="bleu" onclick="clicker(1)"></button>
+                        <button id="2" class="rouge" onclick="clicker(2)"></button>
+                    </tr>
+                    <tr>
+                        <button id="3" class="jaune" onclick="clicker(3)"></button>
+                        <button id="4" class="vert" onclick="clicker(4)"></button>
+                    </tr>
+                </table>
+                <div class="pluspetitcercle">
+                    <div class="titre">
+                        <br>
+                        Simon
+                    </div>
+                    <div id="count" class="count">
+                        0
+                    </div>
+                    <br><br>
+                    <button type="button" onclick="start()">Start</button>
+                    <button type="button" id="strict" onclick="strict()">Strict</button>
+                    <br><br>
+                    <button type="button" onclick="restart()">Restart</button>
+                </div>
+            </div>
+        </div>
+    </center>
+</div>
